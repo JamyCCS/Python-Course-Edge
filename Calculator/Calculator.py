@@ -50,7 +50,7 @@ root=Tk()
 root.title('Calculator')
 root.geometry('420x500')
 root.configure(bg='black')
-# root.resizable(0,0)
+root.resizable(0,0)
 
 
 
