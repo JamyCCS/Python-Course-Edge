@@ -11,6 +11,15 @@ def get_digit(digit):
     new=current+str(digit)
     result_label.config(text=new)
 
+def get_decimal():
+    current= result_label['text']
+    if "." not in current:
+        new= current + "."
+        result_label.config(text=new)
+    else :
+        result_label.config(text="Double Dot invalid")
+
+
 def clear():
     result_label.config(text='')
 
@@ -64,7 +73,7 @@ def get_result():
            result_label.config(text=str(first_number/second_number))
     
 
-       
+
 
 
 root=Tk()
@@ -162,7 +171,7 @@ btn_div=Button(root,text='/', width=5,height=2,bg='gray',fg='white',command=lamb
 btn_div.grid(row=4,column=3,padx=(5,10),pady=(5,5))
 btn_div.config(font=('Times New Roman',15,'bold'))
 
-btn_dot=Button(root,text='.', width=5,height=2,bg='gray',fg='white',command=lambda: get_digit('.'))
+btn_dot=Button(root,text='.', width=5,height=2,bg='gray',fg='white',command=lambda:get_decimal())
 btn_dot.grid(row=4,column=4,padx=(5,10),pady=(5,5))
 btn_dot.config(font=('Times New Roman',15,'bold'))
 
