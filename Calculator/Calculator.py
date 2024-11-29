@@ -19,6 +19,27 @@ def get_operator(op):
     first_number= float(result_label['text'])
     operator=op
     result_label.config(text='')
+def get_pre_op(pop):
+    if pop== "SIN":
+        current= result_label["text"]
+        new= math.sin(math.radians(int(current)))
+        result_label.config(text=str(round(new,2)))
+    elif pop=="COS":
+         current= result_label["text"]
+         new= math.cos(math.radians(int(current)))
+         result_label.config(text=str(round(new,2)))
+    elif pop== "TAN":
+        current= result_label["text"]
+        if (int(current))% 180==90:
+            result_label.config(text="Math Error")
+        else :
+            new= math.tan(math.radians(int(current)))
+            result_label.config(text=str(round(new,2)))
+            
+    else :
+         current= result_label["text"]
+         new= math.sqrt(int(current))
+         result_label.config(text=str(round(new,2)))
     
 
 def get_result():
@@ -42,7 +63,8 @@ def get_result():
         else:
            result_label.config(text=str(first_number/second_number))
     
-        
+
+       
 
 
 root=Tk()
@@ -76,7 +98,7 @@ btn_add=Button(root,text='+', width=5,height=2,bg='gray',fg='white',command=lamb
 btn_add.grid(row=1,column=3,padx=(5,5),pady=(5,5))
 btn_add.config(font=('Times New Roman',15,'bold'))
 
-btn_sin=Button(root,text='SIN', width=5,height=2,bg='gray',fg='white',command=lambda :get_operator('SIN'))
+btn_sin=Button(root,text='SIN', width=5,height=2,bg='gray',fg='white',command=lambda :get_pre_op('SIN'))
 btn_sin.grid(row=1,column=4,padx=(5,10),pady=(5,5))
 btn_sin.config(font=('Times New Roman',15,'bold'))
 
@@ -99,7 +121,7 @@ btn_sub.grid(row=2,column=3,padx=(5,5),pady=(5,5))
 btn_sub.config(font=('Times New Roman',15,'bold'))
 
 
-btn_cos=Button(root,text='COS', width=5,height=2,bg='gray',fg='white',command=lambda :get_operator('COS'))
+btn_cos=Button(root,text='COS', width=5,height=2,bg='gray',fg='white',command=lambda :get_pre_op('COS'))
 btn_cos.grid(row=2,column=4,padx=(5,10),pady=(5,5))
 btn_cos.config(font=('Times New Roman',15,'bold'))
 
@@ -120,7 +142,7 @@ btn_mul=Button(root,text='X', width=5,height=2,bg='gray',fg='white',command=lamb
 btn_mul.grid(row=3,column=3,padx=(5,5),pady=(5,5))
 btn_mul.config(font=('Times New Roman',15,'bold'))
 
-btn_tan=Button(root,text='TAN', width=5,height=2,bg='gray',fg='white',command=lambda :get_operator('TAN'))
+btn_tan=Button(root,text='TAN', width=5,height=2,bg='gray',fg='white',command=lambda :get_pre_op('TAN'))
 btn_tan.grid(row=3,column=4,padx=(5,10),pady=(5,5))
 btn_tan.config(font=('Times New Roman',15,'bold'))
 #row 4 design
@@ -146,7 +168,7 @@ btn_dot.config(font=('Times New Roman',15,'bold'))
 
 #row 5 design
 
-btn_root=Button(root,text='√', width=32,height=2,bg='gray',fg='white', command=lambda :get_operator('√'))
+btn_root=Button(root,text='√', width=32,height=2,bg='gray',fg='white', command=lambda :get_pre_op('√'))
 btn_root.grid(row=5,column=0,columnspan= 5,padx=(10,5),pady=(5,5))
 btn_root.config(font=('Times New Roman',15,'bold'))
 
