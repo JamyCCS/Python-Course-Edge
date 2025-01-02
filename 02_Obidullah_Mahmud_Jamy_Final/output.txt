@@ -1,0 +1,5 @@
+Total Sentences: 8
+Longest Sentence: 'He began his career as a commercial seaman at the age of 16 and started a farm in his mid-twenties'
+Longest Length: 20 words
+Shortest Sentence: ''
+Shortest Length: 1 words
