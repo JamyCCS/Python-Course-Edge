@@ -12,7 +12,7 @@ def handle_next_btn():
 
 
 root = Tk()
-root.title('Single Image Viewer')
+root.title('Slide show Viewer')
 root.geometry('450x450')
 root.resizable(350,350)
 root.configure(background='black')
